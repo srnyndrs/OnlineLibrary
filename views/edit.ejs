@@ -1,0 +1,57 @@
+<%- include('header', { title : "Könyvesch | Könyvek |"}) -%>
+<%- include('usermenu') -%>
+<div id="message">
+    <h1>
+        Könyvek szerkesztése
+    </h1>
+    <p>
+        Itt láthatod az adatbázisban tárolt könyveket!
+        <br><br>
+        Szerkesztéshez használd a megfelelő gombokat!
+    </p>
+</div>
+<table class="table" id="data">
+    <thead>
+    <tr>
+        <th>Cím</th>
+        <th>Szerző</th>
+        <th>Kiadás éve</th>
+        <th>Státusz</th>
+        <th>Művelet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% books.forEach(function(book){ %>
+        <tr>
+            <td><%= book.book_title%></td>
+            <td><%= book.author %></td>
+            <td><%= book.published %></td>
+            <% if(typeof book._user === 'undefined' || book._user === null){ %>
+                <td>Kölcsönözhető</td>
+            <% } else { %>
+                <td>
+                    Kikölcsönözött (<%= book.expiration_date %>)
+                </td>
+            <% } %>
+            <td>
+                <a href="/konyvek/modositas/<%= book._id %>"><button class="action" type="submit">Módosítás</button></a>
+                <a href="/konyvek/torles/<%= book._id %>"><button class="delete" type="submit">Törlés</button></a>
+            </td>
+        </tr>
+    <% }); %>
+    <tr>
+    <% if(books.length === 0) { %>
+        <td></td><td></td>
+        <td colspan="5" readonly>
+            <a href="/konyvek/uj"><button class="table_button" type="submit">Új könyv hozzáadása</button></a>
+        </td>
+        <td></td><td></td>
+    <% } else {%>
+        <td colspan="5" readonly>
+            <a href="/konyvek/uj"><button class="table_button" type="submit">Új könyv hozzáadása</button></a>
+        </td>
+    <% } %>
+    </tr>
+    </tbody>
+</table>
+<%- include('footer') -%>

@@ -1,0 +1,20 @@
+<div>
+    <h1>
+        <a href="/kolcsonzes"><img src="/logo.png"></a>
+        <p id="title">
+            Könyvesch
+            <% if(user_data.admin === true && typeof user_data.admin !== 'undefined') { %>
+                [admin]
+            <% } %>
+        </p>
+    </h1>
+    <a href="/kijelentkezes"><button>Kijelentkezés</button></a>
+    <a href="/kolcsonzesek/<%= user_data._id %>"><button>Kölcsönzéseim</button></a>
+    <a href="/profil/<%= user_data._id %>"><button>Profilom</button></a>
+    <a href="/kolcsonzes"><button>Kölcsönzés</button></a>
+    <% if(user_data.admin === true && typeof user_data.admin !== 'undefined') { %>
+        <a href="/konyvek"><button class="admin" type="submit">Könyvek módosítása</button></a>
+    <% } %>
+    <hr>
+</div>
+<br>

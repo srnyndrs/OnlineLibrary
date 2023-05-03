@@ -1,0 +1,39 @@
+<%- include('header', { title : "Könyvesch | Profilom |"}) -%>
+<%- include('usermenu') -%>
+<div id="message">
+    <h1>
+        Adatok módosítása
+    </h1>
+    <p>
+        Módosítsd adataidat egyszerűen!
+        <br><br>
+        Ehhez töröld ki a változtatandó adatot és írd be az újat helyette!
+        <br><br>
+        Ne felejts el rányomni a módosítások mentése gombra, különben nem fog megváltozni!
+        <br><br>
+        Amennyiben nincs aktív kölcsönzésed, lehetőséged van törölni a profilodat!
+    </p>
+</div>
+<br>
+<div id="form">
+    <fieldset>
+        <form method="post" action="/profil/<%= user_data._id %>/modositas">
+            <input type="hidden" name="user_id" value="<%= (typeof user_data === 'undefined') ? '' : user_data.user_id %>">
+            <label>Vezetéknév</label>
+            <input type=text name="surname" value="<%= user_data.surname %>">
+            <br>
+            <label>Keresztnév</label>
+            <input type=text name="first_name" value="<%= user_data.first_name %>">
+            <br>
+            <label>E-mail cím</label>
+            <input type=text name="email" value="<%= user_data.email %>">
+            <br>
+            <label>Jelszó</label>
+            <input type=password name="password" value="<%= user_data.password %>">
+            <br>
+            <button class="action" type="submit" formmethod="post">Módosítások mentése</button>
+        </form>
+        <a href="/profil/<%= user_data._id %>/torles"><button class="delete" type="submit">Profilom törlése</button></a>
+    </fieldset>
+</div>
+<%- include('footer') -%>

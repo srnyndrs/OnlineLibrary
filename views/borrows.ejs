@@ -1,0 +1,38 @@
+<%- include('header', { title : "Könyvesch | Kölcsönzéseim |"}) -%>
+<%- include('usermenu') -%>
+<div id="message">
+    <h1>
+        Kölcsönzött könyveim
+    </h1>
+    <p>
+        Itt láthatod az általad kikölcsönzött könyveket!
+        <br><br>
+        Kérjük a lejárati dátum napján legkésőbb hozd vissza a könyvet vagy gyere be meghosszabbítani a kölcsönzést!
+    </p>
+</div>
+<div class="table_div">
+    <table class="table" id="data">
+        <thead>
+        <tr>
+            <th>Cím</th>
+            <th>Szerző</th>
+            <th>Kiadás éve</th>
+            <th>Lejárati dátum</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% borrowed_books.forEach(function(book){ %>
+            <tr>
+                <td><%= book.book_title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.published %></td>
+                <td><%= book.expiration_date %></td>
+            </tr>
+        <% }); %>
+        <% if(borrowed_books.length === 0) { %>
+            <tr><td></td></tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('footer') -%>

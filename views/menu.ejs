@@ -1,0 +1,11 @@
+<div>
+    <h1>
+        <a href="/bejelentkezes"><img src="/logo.png"></a>
+        <p id="title">Könyvesch</p>
+    </h1>
+    <% for (key in buttons) { var item = buttons[key]; %>
+        <a href="<%= item.ref %>"><button><%= item.name %></button></a>
+    <% } %>
+    <hr>
+</div>
+<br>

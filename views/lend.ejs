@@ -1,0 +1,49 @@
+<%- include('header', { title : "Könyvesch | Kölcsönzés |"}) -%>
+<%- include('usermenu') -%>
+<div id="message">
+    <h1>
+        Kölcsönözhető könyvek
+    </h1>
+    <p>
+        Itt láthatod a könyveinket!
+        <br><br>
+        Kölcsönzéshez válaszd ki a kívánt könyvet, majd kattints a kölcsönzés gombra!
+        <br><br>
+        Ezután már átveheted a könyvet a helyszínen!
+    </p>
+</div>
+<div class="table_div">
+    <table class="table" id="data">
+        <thead>
+        <tr>
+            <th>Cím</th>
+            <th>Szerző</th>
+            <th>Kiadás éve</th>
+            <th>Státusz</th>
+            <th>Művelet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% books.forEach(function(book){ %>
+            <tr>
+                <td><%= book.book_title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.published %></td>
+                <% if(typeof book._user === 'undefined' || book._user === null){ %>
+                    <td>Kölcsönözhető</td>
+                    <td><a href="/kolcsonzes/<%= book._id %>"><button class="action" type="submit">Kölcsönzés</button></a></td>
+                <% } else { %>
+                    <td>
+                        Kikölcsönözött (<%= book.expiration_date %>)
+                    </td>
+                    <td></td>
+                <% } %>
+            </tr>
+        <% }); %>
+        <% if(books.length === 0) { %>
+            <tr><td></td></tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('footer') -%>

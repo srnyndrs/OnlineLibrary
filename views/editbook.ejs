@@ -1,0 +1,41 @@
+<%- include('header', { title : "Könyvesch | Szerkesztés |"}) -%>
+<%- include('usermenu') -%>
+<div id="message">
+    <h1>
+        Könyv <% if (typeof book === 'undefined') {
+                    %> létrehozása <% }
+                else { %> módosítása <%}%>
+    </h1>
+    <p>
+        Írd be a könyv adatait és ne felejtsd el menteni, hogy bekerüljön az adatbázisba!
+        <% if (typeof book !== 'undefined') { %>
+            <br><br>
+            Ha szeretnéd megváltoztatni az aktuális kölcsönzést, akkor írd be az új kölcsönzési azonosítót, illetve ha törölnéd, akkor mentsd el a mezőt üresen!
+        <% } %>
+
+    </p>
+</div>
+<div id="form">
+        <fieldset>
+            <form method="post">
+                <input type="hidden" name="book_id" value="<%= (typeof book === 'undefined') ? '' : book._id %>">
+                Cím<input type="text" id="book_title" name="book_title"
+                        value="<%= (typeof book === 'undefined') ? '' : book.book_title %>">
+                <br>
+                Szerző<input type="text" id="author" name="author"
+                        value="<%= (typeof book === 'undefined') ? '' : book.author %>">
+                <br>
+                Kiadás éve<input type="text" id="published" name="published"
+                        value="<%= (typeof book === 'undefined') ? '' : book.published %>">
+                <br>
+                <% if(typeof book !== 'undefined' && book._user !== null && typeof book._user !== 'undefined'){ %>
+                Kölcsönző azonosítója<input type="text" id="user" name="user"
+                             value="<%= (book._user.ticket_id === null) ? '' : book._user.ticket_id %>">
+                <% } %>
+                <button class="action" type="submit">Mentés</button>
+            </form>
+                <a href="/konyvek"><button class="action" type="reset">Vissza</button></a>
+            <div class="error"> <% if (typeof error !== 'undefined') { %> <%= error %> <% } %> </div>
+        </fieldset>
+</div>
+<%- include('footer') -%>

@@ -1,0 +1,215 @@
+@font-face {
+	font-family: BalsamiqSans-Regular ;
+	src: url('BalsamiqSans-Regular.ttf') format('truetype');
+}
+
+body {
+	background-color:darkgrey;
+}
+
+h1 {
+	font-family: BalsamiqSans-Regular ;
+	margin: auto;
+	padding-top: 5%;
+	font-weight:normal;
+	display: inline;
+	vertical-align: middle;
+	color: white;
+}
+
+img {
+	vertical-align: middle;
+	height: 60px;
+}
+
+hr {
+	height:4px;
+	border-width:0;
+	color:lightgray;
+	background-color:lightgray;
+}
+
+button {
+	font-family: BalsamiqSans-Regular ;
+	background: white;
+	font-size: 14pt;
+	margin-top: 20px;
+	margin-left: 20px;
+	height:auto;
+	width:auto;
+	float:right;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.passwordreminder {
+	font-size: 10pt;
+	padding-top: 10px;
+}
+
+.error {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	color: red;
+	font-size: 18pt;
+}
+
+#title {
+	display: inline;
+	vertical-align: middle;
+	color: white;
+	padding-left: 2px;
+}
+
+.table_div {
+	display: inline-block;
+	float: right;
+	width: 60%;
+}
+
+#message {
+	font-family: BalsamiqSans-Regular;
+	float: left;
+	width: 30%;
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+	font-size: 20pt;
+	margin-left: 1%;
+	margin-right: 3%;
+	line-height: 150%;
+}
+
+#message h1 {
+	line-height: 130%;
+	width: 35%;
+}
+
+#message p {
+	text-align: justify;
+}
+
+#form {
+	display: inline-block;
+	background: white;
+	width: 30%;
+	height: auto;
+	margin-top: 10px;
+	margin-right: 80px;
+	font-family: BalsamiqSans-Regular;
+	font-size: 20pt;
+	color: black;
+	float: right;
+	border-radius: 25px;
+	padding: 20px;
+}
+
+#form fieldset {
+	text-align: center;
+	margin: 3pt;
+	border: solid 2pt black;
+}
+
+#form fieldset [type=text], #form fieldset [type=password], #form fieldset select {
+	font-family: Arial;
+	font-size: 12pt;
+	float: left;
+	border: 2pt solid black;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	size: 32px;
+}
+
+#form fieldset [type = submit] {
+	font-family: BalsamiqSans-Regular;
+	font-size: 12pt;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	background-color: #858282;
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	margin: 6px 2px;
+	cursor: pointer;
+}
+
+#form fieldset [type = reset]{
+	font-family: BalsamiqSans-Regular;
+	font-size: 12pt;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	background-color: #585656;
+	border: none;
+	color: white;
+	padding: 8px 16px;
+	margin: 6px 2px;
+	cursor: pointer;
+}
+
+.table {
+	font-family: BalsamiqSans-Regular;
+	font-size: 16pt;
+	width: auto;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border: 2pt solid black;
+}
+.table tbody {
+	display: block;
+	width: auto;
+	overflow: auto;
+	height: 10%;
+	background-color: lightgray;
+}
+.table thead tr {
+	display: block;
+	border-bottom: 2pt solid black;
+}
+.table thead {
+	background: darkgrey;
+	color: black;
+}
+.table th, .table td {
+	padding: 5px;
+	text-align: center;
+	width: 200px;
+}
+
+.table tbody tr:nth-child(even) {background: #c9c9c9}
+.table tbody tr:nth-child(odd) {background: lightgray}
+
+.table td[colspan="2"] {
+	margin: auto;
+}
+
+.table button {
+	float: none;
+	margin: 5px;
+}
+
+
+#data {
+	margin-right: 2%;
+	margin-top: 2%;
+}
+
+.action {
+	float: left;
+}
+
+.delete {
+	float: left;
+	background-color: #c70c0c !important;
+	color: white;
+}
+
+.admin {
+	float: right;
+	background-color: #c70c0c !important;
+	color: white;
+}
