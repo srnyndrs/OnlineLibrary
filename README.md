@@ -10,15 +10,15 @@ A felhasználónak lehetősége van megtekinteni az általa kölcsönzött köny
 
 <i>A kölcsönzés és visszavétel alapvetően a helyszínen történik, azonban ez jelen esetben nem megoldható, ezért a lejárati dátum után egyből kölcsönözhetővé válik az adott könyv. Feltételezzük, hogy a könyvtár tagjai megbízhatóak.</i>
 
-## Nézet: Regisztráció
-
-![](pictures/fooldal.png)
-Ez a főoldal, melyen lehetőség van regisztrálni, illetve ha már van regisztrációnk a jobb felső „Bejelentkezés” gombra nyomva átirányít a bejelentkezési oldalra. Az adatok beírása után a „Regisztrálok” gomb megnyomásával létrejön a fiók és átirányít az új profil kölcsönzés oldalára.
-
 ## Nézet: Bejelentkezés
 
 ![](pictures/bejelentkezes.png)
-Az adatok beírása után a „Bejelentkezés” gombra kattintva léphetünk be, ekkor a kölcsönzés oldalra kerülünk.
+A főoldalon a megfelelő adatok beírása után a „Bejelentkezés” gombra kattintva léphetünk be, ekkor a kölcsönzés oldalra kerülünk. Ha még nincs felhasználónk, akkor a jobb felső „Regisztráció” gombbal megtehetjük.
+
+## Nézet: Regisztráció
+
+![](pictures/fooldal.png)
+Ezen az oldalon lehetőségünk van regisztrálni, illetve ha már van felhasználónk, akkor a jobb felső „Bejelentkezés” gombra nyomva átkerülünk bejelentkezési oldalra. Az adatok beírása után a „Regisztrálok” gomb megnyomásával létrejön a fiók és átirányít az új profil kölcsönzés oldalára.
 
 ## Nézet: Kölcsönzés
 
@@ -35,3 +35,8 @@ A „Kölcsönzéseim” menügomb használata után erre az oldalra kerülünk.
 
 ![](pictures/profilom.png)
 A „Profilom” menügomb megnyomásával tudunk erre az oldalra jutni. A mezőkben láthatjuk a jelenlegi adatainkat és amelyek szerkeszthetőek, azokat tudjuk módosítási célból szerkeszteni és a „Módosítások mentése” gomb megnyomásával jóváhagyni. A „Profil törlése” gomb használata esetén tudjuk törölni a felhasználónkat, ha nincs aktív kölcsönzésünk.
+
+## Nézet: Könyvek módosítása
+
+![](pictures/admin.png)
+Az admin joggal rendelkező felhasználók módosíthatják a könyvtár adatbázisát a „Könyvek módosítása” gombra kattintva.
